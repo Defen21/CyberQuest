@@ -338,3 +338,6 @@ ol.plain, ul.plain { list-style: none; padding: 0; margin: 0; }
 }
 .lesson-layout .lesson { max-width: none; }
 @media (min-width: 576px) { .lesson .cells.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Badge cards: the text column must shrink and wrap inside its card. */
+.badge-item > div { flex: 1; min-width: 0; overflow-wrap: break-word; }
+.cells.badge-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
