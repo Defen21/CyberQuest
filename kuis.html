@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kuis - CyberQuest</title>
+    <meta name="description" content="Daftar kuis per level, sisa percobaan, dan rekomendasi materi dari hasil kuis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@200..500,0..100&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<a class="skip" href="#main">Langsung ke konten</a>
+
+<header class="topbar">
+    <nav class="navbar navbar-expand-xl wrap" aria-label="Utama">
+        <a class="wordmark" href="dashboard.html" aria-label="CyberQuest, ke dashboard">CyberQuest</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">Menu</button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                <li><a class="nav-link" href="index.html">Learning Path</a></li>
+                <li><a class="nav-link" href="kuis.html" aria-current="page">Kuis</a></li>
+                <li><a class="nav-link" href="dailyMission.html">Misi</a></li>
+                <li><a class="nav-link" href="xp-level.html">XP &amp; Badge</a></li>
+                <li><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                <li><a class="nav-link" href="kompetisi.html">Kompetisi</a></li>
+                <li><a class="nav-link" href="profil.html">Profil</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="main" class="wrap">
+    <div class="page-head">
+        <h1>Kuis</h1>
+        <p>Uji pemahamanmu di setiap materi. Jumlah percobaan setiap kuis dibatasi.</p>
+    </div>
+
+    <section class="box" aria-labelledby="rek-title">
+        <h2 id="rek-title">Rekomendasi materi untuk kamu</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <p class="label">Perlu diulang</p>
+                <p class="mb-0"><strong>Jenis Ancaman Siber</strong> <span class="tag tag-quiet">Materi belum ditulis</span></p>
+                <p class="muted mb-0">Nilai terbaik 33. Pelajari lagi: Phishing, Ransomware.</p>
+            </div>
+            <div class="col-md-6">
+                <p class="label">Lanjutkan belajar</p>
+                <p class="mb-0"><strong>Dasar Keamanan Jaringan</strong>, level Menengah <span class="tag tag-quiet">Materi belum ditulis</span></p>
+                <p class="muted mb-0">Materi berikutnya yang belum kamu coba.</p>
+            </div>
+        </div>
+    </section>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active lvl-pemula" id="tab-pemula" data-bs-toggle="tab" data-bs-target="#pemula" type="button" role="tab" aria-controls="pemula" aria-selected="true"><span class="swatch" aria-hidden="true"></span>Pemula</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link lvl-menengah" id="tab-menengah" data-bs-toggle="tab" data-bs-target="#menengah" type="button" role="tab" aria-controls="menengah" aria-selected="false"><span class="swatch" aria-hidden="true"></span>Menengah</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link lvl-lanjutan" id="tab-lanjutan" data-bs-toggle="tab" data-bs-target="#lanjutan" type="button" role="tab" aria-controls="lanjutan" aria-selected="false"><span class="swatch" aria-hidden="true"></span>Lanjutan</button></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="pemula" role="tabpanel" aria-labelledby="tab-pemula" tabindex="0">
+            <div class="cells cols-3 lvl-pemula">
+                <h2 class="lvl-head h3 mb-0">Kuis level Pemula</h2>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Pengenalan Keamanan Siber</h3><span class="tag tag-solid">Lulus</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>2</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>100</dd></dl>
+                    <div class="actions"><a class="btn btn-ink" href="kerjakan-kuis.html">Coba lagi</a><a class="btn" href="materi1.html">Materi</a></div>
+                </div>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Jenis Ancaman Siber</h3><span class="tag tag-error">Belum lulus</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>0</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>33</dd></dl>
+                    <div class="actions"><button class="btn" type="button" disabled>Percobaan habis</button></div>
+                </div>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Password yang Aman</h3><span class="tag tag-quiet">Belum dikerjakan</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>3</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>belum ada</dd></dl>
+                    <div class="actions"><a class="btn btn-ink" href="kerjakan-kuis.html">Mulai kuis</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="menengah" role="tabpanel" aria-labelledby="tab-menengah" tabindex="0">
+            <div class="cells cols-3 lvl-menengah">
+                <h2 class="lvl-head h3 mb-0">Kuis level Menengah</h2>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Dasar Keamanan Jaringan</h3><span class="tag tag-quiet">Belum dikerjakan</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>3</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>belum ada</dd></dl>
+                    <div class="actions"><a class="btn btn-ink" href="kerjakan-kuis.html">Mulai kuis</a></div>
+                </div>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Keamanan Aplikasi Web</h3><span class="tag tag-quiet">Belum dikerjakan</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>3</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>belum ada</dd></dl>
+                    <div class="actions"><a class="btn btn-ink" href="kerjakan-kuis.html">Mulai kuis</a></div>
+                </div>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Perlindungan Data</h3><span class="tag tag-quiet">Belum dikerjakan</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>3</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>belum ada</dd></dl>
+                    <div class="actions"><a class="btn btn-ink" href="kerjakan-kuis.html">Mulai kuis</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="lanjutan" role="tabpanel" aria-labelledby="tab-lanjutan" tabindex="0">
+            <div class="cells cols-3 lvl-lanjutan">
+                <h2 class="lvl-head h3 mb-0">Kuis level Lanjutan</h2>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Analisis Kerentanan</h3><span class="tag tag-quiet">Belum dikerjakan</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>3</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>belum ada</dd></dl>
+                    <div class="actions"><a class="btn btn-ink" href="kerjakan-kuis.html">Mulai kuis</a></div>
+                </div>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Penanganan Insiden</h3><span class="tag tag-quiet">Belum dikerjakan</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>3</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>belum ada</dd></dl>
+                    <div class="actions"><a class="btn btn-ink" href="kerjakan-kuis.html">Mulai kuis</a></div>
+                </div>
+                <div class="cell-stack">
+                    <div class="cell-top"><h3>Simulasi Keamanan Siber</h3><span class="tag tag-quiet">Belum dikerjakan</span></div>
+                    <dl class="facts"><dt>Jumlah soal</dt><dd>3</dd><dt>KKM</dt><dd>70</dd><dt>Sisa percobaan</dt><dd><strong>3</strong> dari 3</dd><dt>Nilai terbaik</dt><dd>belum ada</dd></dl>
+                    <div class="actions"><a class="btn btn-ink" href="kerjakan-kuis.html">Mulai kuis</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="foot">
+    <div class="wrap">
+        <span>CyberQuest, Tugas Besar Pemrograman Web Kelompok 02.</span>
+        <a href="admin.html">Area staf</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

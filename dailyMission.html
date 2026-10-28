@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Misi Harian - CyberQuest</title>
+    <meta name="description" content="Kerjakan misi keamanan siber hari ini dan jaga streak belajarmu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@200..500,0..100&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<a class="skip" href="#main">Langsung ke konten</a>
+
+<header class="topbar">
+    <nav class="navbar navbar-expand-xl wrap" aria-label="Utama">
+        <a class="wordmark" href="dashboard.html" aria-label="CyberQuest, ke dashboard">CyberQuest</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">Menu</button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                <li><a class="nav-link" href="index.html">Learning Path</a></li>
+                <li><a class="nav-link" href="kuis.html">Kuis</a></li>
+                <li><a class="nav-link" href="dailyMission.html" aria-current="page">Misi</a></li>
+                <li><a class="nav-link" href="xp-level.html">XP &amp; Badge</a></li>
+                <li><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                <li><a class="nav-link" href="kompetisi.html">Kompetisi</a></li>
+                <li><a class="nav-link" href="profil.html">Profil</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="main" class="wrap">
+    <div class="page-head">
+        <h1>Misi hari ini</h1>
+        <p>Selesaikan tantangan keamanan siber hari ini dan jaga streak-mu.</p>
+    </div>
+    <ul class="subnav">
+        <li><a href="dailyMission.html" aria-current="page">Misi harian</a></li>
+        <li><a href="weeklyChallenge.html">Tantangan mingguan</a></li>
+    </ul>
+
+    <div class="row g-5">
+        <div class="col-lg-8">
+            <div class="cells">
+                <div><p class="figure">8 hari</p><p class="label">Streak saat ini</p></div>
+                <div>
+                    <p class="figure">3/5</p>
+                    <p class="label">Soal selesai</p>
+                    <div class="progress mt-2" role="progressbar" aria-label="Progres misi hari ini" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 60%"></div></div>
+                </div>
+            </div>
+
+            <form data-answer="c" novalidate>
+                <fieldset class="question">
+                    <legend><span class="label d-block">Soal ke-1</span>Metode autentikasi mana yang termasuk Multi-Factor Authentication?</legend>
+                    <label class="option"><input type="radio" name="mfa" value="a"> Username saja</label>
+                    <label class="option"><input type="radio" name="mfa" value="b"> Password saja</label>
+                    <label class="option"><input type="radio" name="mfa" value="c"> Password + OTP</label>
+                </fieldset>
+                <button class="btn btn-ink" type="submit">Kirim jawaban</button>
+                <p class="form-help" aria-live="polite"></p>
+            </form>
+        </div>
+
+        <aside class="col-lg-4">
+            <section class="box" aria-labelledby="reward-title">
+                <h2 id="reward-title" class="h3">Hadiah misi</h2>
+                <ul class="mb-0">
+                    <li>+100 XP</li>
+                    <li>+1 hari streak</li>
+                    <li>Progres badge Cyber Learner</li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+</main>
+
+<footer class="foot">
+    <div class="wrap">
+        <span>CyberQuest, Tugas Besar Pemrograman Web Kelompok 02.</span>
+        <a href="admin.html">Area staf</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

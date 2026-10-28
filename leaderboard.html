@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leaderboard - CyberQuest</title>
+    <meta name="description" content="Peringkat peserta berdasarkan XP dari materi, kuis, dan tantangan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@200..500,0..100&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<a class="skip" href="#main">Langsung ke konten</a>
+
+<header class="topbar">
+    <nav class="navbar navbar-expand-xl wrap" aria-label="Utama">
+        <a class="wordmark" href="dashboard.html" aria-label="CyberQuest, ke dashboard">CyberQuest</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">Menu</button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                <li><a class="nav-link" href="index.html">Learning Path</a></li>
+                <li><a class="nav-link" href="kuis.html">Kuis</a></li>
+                <li><a class="nav-link" href="dailyMission.html">Misi</a></li>
+                <li><a class="nav-link" href="xp-level.html">XP &amp; Badge</a></li>
+                <li><a class="nav-link" href="leaderboard.html" aria-current="page">Leaderboard</a></li>
+                <li><a class="nav-link" href="kompetisi.html">Kompetisi</a></li>
+                <li><a class="nav-link" href="profil.html">Profil</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="main" class="wrap">
+    <div class="page-head">
+        <h1>Leaderboard</h1>
+        <p>Lihat peringkat peserta berdasarkan XP yang diperoleh dari materi, kuis, dan tantangan.</p>
+    </div>
+
+    <div class="cells">
+        <div><p class="figure">128</p><p class="label">Peserta aktif</p></div>
+        <div><p class="figure">84.250</p><p class="label">Total XP</p></div>
+        <div><p class="figure">3</p><p class="label">Kompetisi aktif</p></div>
+        <div><p class="figure">Mingguan</p><p class="label">Periode</p></div>
+    </div>
+
+    <section class="section" aria-labelledby="rank-title">
+        <div class="section-head"><h2 id="rank-title">Peringkat peserta</h2></div>
+        <form class="row g-2 align-items-end mb-4" data-endpoint="" novalidate>
+            <div class="col-sm-4 col-lg-3">
+                <label class="form-label" for="periode">Periode</label>
+                <select class="form-select" id="periode" name="periode"><option>Minggu ini</option><option>Bulan ini</option><option>Sepanjang waktu</option></select>
+            </div>
+            <div class="col-sm-4 col-lg-3">
+                <label class="form-label" for="level">Level</label>
+                <select class="form-select" id="level" name="level"><option>Semua level</option><option>Pemula</option><option>Menengah</option><option>Lanjutan</option></select>
+            </div>
+            <div class="col-sm-4 col-lg-2"><button class="btn w-100" type="submit">Terapkan</button></div>
+            <p class="form-help col-12" aria-live="polite"></p>
+        </form>
+
+        <div class="podium">
+            <div><p class="rank">2</p><p class="mb-1"><span class="initials">FR</span><strong>Fathimah R.</strong></p><p class="small muted mb-1">Level 8</p><p class="num fw-semibold mb-0">7.850 XP</p></div>
+            <div class="first"><p class="rank">1</p><p class="mb-1"><span class="initials">RT</span><strong>Ramadhan T.</strong></p><p class="small muted mb-1">Level 10</p><p class="num fw-semibold mb-0">9.420 XP</p></div>
+            <div><p class="rank">3</p><p class="mb-1"><span class="initials">JN</span><strong>Jihan N.</strong></p><p class="small muted mb-1">Level 7</p><p class="num fw-semibold mb-0">7.120 XP</p></div>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="list-title">
+        <div class="section-head"><h2 id="list-title">Daftar peringkat</h2></div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead><tr><th scope="col">Peringkat</th><th scope="col">Nama peserta</th><th scope="col">Level</th><th scope="col" class="w-25">Progres</th><th scope="col" class="text-end">Total XP</th></tr></thead>
+                <tbody>
+                    <tr><td class="num">1</td><td><span class="initials" aria-hidden="true">RT</span>Ramadhan Tangguh</td><td class="num">10</td><td><div class="progress" role="progressbar" aria-label="Progres Ramadhan" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 100%"></div></div></td><td class="text-end num">9.420</td></tr>
+                    <tr><td class="num">2</td><td><span class="initials" aria-hidden="true">FR</span>Fathimah Radhiyya</td><td class="num">8</td><td><div class="progress" role="progressbar" aria-label="Progres Fathimah" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 83%"></div></div></td><td class="text-end num">7.850</td></tr>
+                    <tr><td class="num">3</td><td><span class="initials" aria-hidden="true">JN</span>Jihan Nabila</td><td class="num">7</td><td><div class="progress" role="progressbar" aria-label="Progres Jihan" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 76%"></div></div></td><td class="text-end num">7.120</td></tr>
+                    <tr><td class="num">4</td><td><span class="initials" aria-hidden="true">MP</span>Meysha Primiandita</td><td class="num">6</td><td><div class="progress" role="progressbar" aria-label="Progres Meysha" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 64%"></div></div></td><td class="text-end num">6.030</td></tr>
+                    <tr><td class="num">5</td><td><span class="initials" aria-hidden="true">AN</span>Avicena Naufal</td><td class="num">5</td><td><div class="progress" role="progressbar" aria-label="Progres Avicena" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 48%"></div></div></td><td class="text-end num">4.480</td></tr>
+                    <tr><td class="num">6</td><td><span class="initials" aria-hidden="true">ZS</span>Zaidan Salam</td><td class="num">4</td><td><div class="progress" role="progressbar" aria-label="Progres Zaidan" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 35%"></div></div></td><td class="text-end num">3.250</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<footer class="foot">
+    <div class="wrap">
+        <span>CyberQuest, Tugas Besar Pemrograman Web Kelompok 02.</span>
+        <a href="admin.html">Area staf</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

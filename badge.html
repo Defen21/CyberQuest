@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Koleksi Badge - CyberQuest</title>
+    <meta name="description" content="Badge yang sudah didapat dan syarat badge yang masih terkunci.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@200..500,0..100&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<a class="skip" href="#main">Langsung ke konten</a>
+
+<header class="topbar">
+    <nav class="navbar navbar-expand-xl wrap" aria-label="Utama">
+        <a class="wordmark" href="dashboard.html" aria-label="CyberQuest, ke dashboard">CyberQuest</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">Menu</button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                <li><a class="nav-link" href="index.html">Learning Path</a></li>
+                <li><a class="nav-link" href="kuis.html">Kuis</a></li>
+                <li><a class="nav-link" href="dailyMission.html">Misi</a></li>
+                <li><a class="nav-link" href="xp-level.html" aria-current="page">XP &amp; Badge</a></li>
+                <li><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                <li><a class="nav-link" href="kompetisi.html">Kompetisi</a></li>
+                <li><a class="nav-link" href="profil.html">Profil</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="main" class="wrap">
+    <div class="page-head">
+        <h1>Koleksi Badge</h1>
+        <p>Badge didapat dari pencapaian belajar. Badge yang terkunci menunjukkan syarat yang perlu kamu selesaikan.</p>
+    </div>
+    <ul class="subnav">
+        <li><a href="xp-level.html">XP &amp; Level</a></li>
+        <li><a href="badge.html" aria-current="page">Koleksi Badge</a></li>
+    </ul>
+
+    <section class="box" aria-labelledby="prog-title">
+        <h2 id="prog-title" class="h3">Progres koleksi</h2>
+        <div class="meter-row">
+            <span><strong class="figure">4</strong> <span class="muted">dari 8 badge</span></span><span class="num">50%</span>
+            <div class="progress" role="progressbar" aria-label="Progres koleksi badge" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 50%"></div></div>
+        </div>
+        <p>Terakhir didapat: <strong>Konsisten 7 Hari</strong></p>
+        <div class="cells mb-0">
+            <div><p class="label">Umum</p><p class="figure">3/3</p></div>
+            <div><p class="label">Langka</p><p class="figure">1/2</p></div>
+            <div><p class="label">Epik</p><p class="figure">0/2</p></div>
+            <div><p class="label">Legendaris</p><p class="figure">0/1</p></div>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="all-title">
+        <div class="section-head"><h2 id="all-title">Semua badge</h2><span class="tag">8 badge</span></div>
+        <div class="filters" data-filter-for="daftar-badge" aria-label="Saring badge">
+            <button class="btn btn-sm" type="button" data-filter="semua" aria-pressed="true">Semua</button>
+            <button class="btn btn-sm" type="button" data-filter="dimiliki" aria-pressed="false">Dimiliki</button>
+            <button class="btn btn-sm" type="button" data-filter="terkunci" aria-pressed="false">Terkunci</button>
+            <button class="btn btn-sm" type="button" data-filter="umum" aria-pressed="false">Umum</button>
+            <button class="btn btn-sm" type="button" data-filter="langka" aria-pressed="false">Langka</button>
+            <button class="btn btn-sm" type="button" data-filter="epik" aria-pressed="false">Epik</button>
+            <button class="btn btn-sm" type="button" data-filter="legendaris" aria-pressed="false">Legendaris</button>
+        </div>
+        <ul class="cells plain" id="daftar-badge">
+            <li class="badge-item" data-tags="dimiliki langka"><span class="badge-mark" aria-hidden="true"><i class="bi bi-calendar-check"></i></span><div><h3>Konsisten 7 Hari</h3><span class="tag">Langka</span><p class="mt-2">Menyelesaikan misi harian 7 hari berturut-turut.</p><p class="small fw-semibold">Didapat 19 Okt 2026</p><p class="small muted mb-0">Dimiliki 33% peserta</p></div></li>
+            <li class="badge-item" data-tags="dimiliki umum"><span class="badge-mark" aria-hidden="true"><i class="bi bi-patch-question"></i></span><div><h3>Penjawab Cepat</h3><span class="tag">Umum</span><p class="mt-2">Menyelesaikan 3 kuis.</p><p class="small fw-semibold">Didapat 16 Okt 2026</p><p class="small muted mb-0">Dimiliki 67% peserta</p></div></li>
+            <li class="badge-item" data-tags="dimiliki umum"><span class="badge-mark" aria-hidden="true"><i class="bi bi-book"></i></span><div><h3>Langkah Pertama</h3><span class="tag">Umum</span><p class="mt-2">Menyelesaikan materi pertama.</p><p class="small fw-semibold">Didapat 13 Okt 2026</p><p class="small muted mb-0">Dimiliki 100% peserta</p></div></li>
+            <li class="badge-item" data-tags="dimiliki umum"><span class="badge-mark" aria-hidden="true"><i class="bi bi-shield-check"></i></span><div><h3>Akses Diberikan</h3><span class="tag">Umum</span><p class="mt-2">Membuat akun dan masuk untuk pertama kali.</p><p class="small fw-semibold">Didapat 10 Okt 2026</p><p class="small muted mb-0">Dimiliki 100% peserta</p></div></li>
+            <li class="badge-item is-locked" data-tags="terkunci langka"><span class="badge-mark" aria-hidden="true"><i class="bi bi-lock"></i></span><div><h3>Pemburu Phishing</h3><span class="tag tag-quiet">Langka</span><p class="mt-2">Lulus semua kuis modul Phishing.</p><p class="small muted">Belum didapat</p><p class="small muted mb-0">Dimiliki 33% peserta</p></div></li>
+            <li class="badge-item is-locked" data-tags="terkunci epik"><span class="badge-mark" aria-hidden="true"><i class="bi bi-lock"></i></span><div><h3>Ahli Kuis</h3><span class="tag tag-quiet">Epik</span><p class="mt-2">Mendapat nilai sempurna di 5 kuis.</p><p class="small muted">Belum didapat</p><p class="small muted mb-0">Dimiliki 33% peserta</p></div></li>
+            <li class="badge-item is-locked" data-tags="terkunci epik"><span class="badge-mark" aria-hidden="true"><i class="bi bi-lock"></i></span><div><h3>Penakluk CTF</h3><span class="tag tag-quiet">Epik</span><p class="mt-2">Menyelesaikan 3 tantangan mingguan.</p><p class="small muted">Belum didapat</p><p class="small muted mb-0">Dimiliki 33% peserta</p></div></li>
+            <li class="badge-item is-locked" data-tags="terkunci legendaris"><span class="badge-mark" aria-hidden="true"><i class="bi bi-lock"></i></span><div><h3>Cyber Guardian</h3><span class="tag tag-quiet">Legendaris</span><p class="mt-2">Mencapai level tertinggi.</p><p class="small muted">Belum didapat</p><p class="small muted mb-0">Dimiliki 0% peserta</p></div></li>
+        </ul>
+        <p class="muted" data-filter-empty hidden>Tidak ada badge di kelompok ini.</p>
+    </section>
+</main>
+
+<footer class="foot">
+    <div class="wrap">
+        <span>CyberQuest, Tugas Besar Pemrograman Web Kelompok 02.</span>
+        <a href="admin.html">Area staf</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>
