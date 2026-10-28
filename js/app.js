@@ -1,5 +1,3 @@
-// Form tanpa server: validasi dulu, lalu jujur bahwa data belum terkirim.
-// data-next: halaman tujuan setelah valid (alur prototipe), tanpa membawa isi form ke URL.
 document.querySelectorAll('form[data-endpoint]').forEach((form) => {
     const help = form.querySelector('[aria-live]');
     form.addEventListener('submit', (e) => {
@@ -23,7 +21,6 @@ document.querySelectorAll('form[data-endpoint]').forEach((form) => {
     });
 });
 
-// Soal tunggal misi harian: jawaban dicek di halaman.
 document.querySelectorAll('form[data-answer]').forEach((form) => {
     const help = form.querySelector('[aria-live]');
     form.addEventListener('submit', (e) => {
@@ -40,7 +37,6 @@ document.querySelectorAll('form[data-answer]').forEach((form) => {
     });
 });
 
-// Konfirmasi password: data-match="id-field-asal".
 document.querySelectorAll('input[data-match]').forEach((input) => {
     const source = document.getElementById(input.dataset.match);
     const check = () => input.setCustomValidity(input.value && input.value !== source.value ? 'Password tidak sama.' : '');
@@ -48,7 +44,6 @@ document.querySelectorAll('input[data-match]').forEach((input) => {
     source.addEventListener('input', check);
 });
 
-// Filter daftar: tombol [data-filter] di dalam [data-filter-for="id-daftar"], item memakai data-tags.
 document.querySelectorAll('[data-filter-for]').forEach((group) => {
     const list = document.getElementById(group.dataset.filterFor);
     const empty = list.closest('section').querySelector('[data-filter-empty]');
@@ -67,7 +62,6 @@ document.querySelectorAll('[data-filter-for]').forEach((group) => {
     });
 });
 
-// Kuis: dinilai di halaman dari data-answer tiap soal.
 const quiz = document.getElementById('quiz-form');
 if (quiz) {
     const result = document.getElementById('hasil');
