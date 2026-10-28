@@ -60,6 +60,26 @@
     color-scheme: dark;
 }
 
+:root[data-theme="light"] {
+    --color-paper: oklch(97% 0.004 230);
+    --color-paper-2: oklch(99.5% 0.002 230);
+    --color-paper-3: oklch(94% 0.006 230);
+    --color-ink: oklch(20% 0.012 235);
+    --color-ink-2: oklch(32% 0.012 235);
+    --color-muted: oklch(47% 0.014 235);
+    --color-rule: oklch(88% 0.008 235);
+    --color-rule-2: oklch(75% 0.01 235);
+    --color-accent: oklch(50% 0.16 135);
+    --color-accent-hi: oklch(45% 0.15 135);
+    --color-accent-ink: oklch(98.5% 0.01 130);
+    --color-focus: oklch(50% 0.16 135);
+    --color-error: oklch(51% 0.19 27);
+    --point-lo: oklch(78% 0.03 235);
+    --point-mid: oklch(55% 0.04 235);
+    --point-hi: oklch(24% 0.03 235);
+    color-scheme: light;
+}
+
 .lvl-pemula { --n: 1; }
 .lvl-menengah { --n: 2; }
 .lvl-lanjutan { --n: 3; }
@@ -309,3 +329,8 @@ ol.plain, ul.plain { list-style: none; padding: 0; margin: 0; }
 @media (min-width: 576px) { .lesson .cells.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .badge-item > div { flex: 1; min-width: 0; overflow-wrap: break-word; }
 .cells.badge-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
+.nav-tools { display: inline-flex; align-items: center; gap: var(--space-xs); margin-left: var(--space-sm); }
+.nav-tools .btn-icon { min-width: 40px; min-height: 40px; padding: 0; font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.02em; }
+:root[data-theme="light"] .i-sun, :root:not([data-theme="light"]) .i-moon { display: none; }
+.auth-form .nav-tools { float: right; margin: 0; }
+@media (max-width: 1199.98px) { .topbar .nav-tools { margin: var(--space-xs) 0 var(--space-sm); } }

@@ -2,8 +2,13 @@ document.querySelectorAll('canvas[data-scan]').forEach((canvas) => {
     const ctx = canvas.getContext('2d');
     const css = getComputedStyle(document.documentElement);
     const color = (name) => css.getPropertyValue(name).trim();
-    const shades = [color('--point-lo'), color('--point-mid'), color('--point-hi')];
-    const lime = color('--color-accent');
+    let shades, lime;
+    const readColors = () => {
+        shades = [color('--point-lo'), color('--point-mid'), color('--point-hi')];
+        lime = color('--color-accent');
+    };
+    readColors();
+    document.addEventListener('themechange', () => { readColors(); if (!running) draw(3500); });
 
     const inShield = (x, y) => {
         if (y > 1 || y < -1.25) return false;

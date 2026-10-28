@@ -8,7 +8,7 @@ document.querySelectorAll('form[data-endpoint]').forEach((form) => {
         if (bad) {
             fields.filter((el) => !el.checkValidity()).forEach((el) => el.setAttribute('aria-invalid', 'true'));
             help.className = 'form-help is-error';
-            help.textContent = form.dataset.invalid || 'Masih ada isian yang kosong atau tidak valid.';
+            help.textContent = t('Masih ada isian yang kosong atau tidak valid.');
             bad.focus();
             return;
         }
@@ -17,7 +17,7 @@ document.querySelectorAll('form[data-endpoint]').forEach((form) => {
             return;
         }
         help.className = 'form-help';
-        help.textContent = 'Belum terkirim: form ini belum tersambung ke server.';
+        help.textContent = t('Belum terkirim: form ini belum tersambung ke server.');
     });
 });
 
@@ -28,18 +28,18 @@ document.querySelectorAll('form[data-answer]').forEach((form) => {
         const picked = form.querySelector('input[type="radio"]:checked');
         if (!picked) {
             help.className = 'form-help is-error';
-            help.textContent = 'Pilih satu jawaban dulu.';
+            help.textContent = t('Pilih satu jawaban dulu.');
             return;
         }
         const ok = picked.value === form.dataset.answer;
         help.className = ok ? 'form-help is-ok' : 'form-help is-error';
-        help.textContent = ok ? 'Benar. Password ditambah OTP memakai dua faktor yang berbeda.' : 'Belum tepat. Cari pilihan yang memakai dua faktor berbeda.';
+        help.textContent = t(ok ? 'Benar. Password ditambah OTP memakai dua faktor yang berbeda.' : 'Belum tepat. Cari pilihan yang memakai dua faktor berbeda.');
     });
 });
 
 document.querySelectorAll('input[data-match]').forEach((input) => {
     const source = document.getElementById(input.dataset.match);
-    const check = () => input.setCustomValidity(input.value && input.value !== source.value ? 'Password tidak sama.' : '');
+    const check = () => input.setCustomValidity(input.value && input.value !== source.value ? t('Password tidak sama.') : '');
     input.addEventListener('input', check);
     source.addEventListener('input', check);
 });
@@ -72,7 +72,7 @@ if (quiz) {
         const blank = qs.find((q) => !q.querySelector('input:checked'));
         if (blank) {
             help.className = 'form-help is-error';
-            help.textContent = 'Jawab semua soal sebelum mengirim.';
+            help.textContent = t('Jawab semua soal sebelum mengirim.');
             blank.querySelector('input').focus();
             return;
         }
@@ -80,14 +80,14 @@ if (quiz) {
         const score = Math.round((qs.length - wrong.length) / qs.length * 100);
         const pass = score >= Number(quiz.dataset.kkm);
         result.querySelector('[data-score]').textContent = score;
-        result.querySelector('[data-detail]').textContent = `${qs.length - wrong.length} dari ${qs.length} soal benar`;
-        result.querySelector('[data-status]').textContent = pass ? `Lulus (KKM ${quiz.dataset.kkm})` : `Belum lulus (KKM ${quiz.dataset.kkm})`;
+        result.querySelector('[data-detail]').textContent = t(`${qs.length - wrong.length} dari ${qs.length} soal benar`);
+        result.querySelector('[data-status]').textContent = t(pass ? `Lulus (KKM ${quiz.dataset.kkm})` : `Belum lulus (KKM ${quiz.dataset.kkm})`);
         result.querySelector('[data-status]').className = pass ? 'tag tag-solid' : 'tag tag-error';
-        result.querySelector('[data-advice]').textContent = pass
+        result.querySelector('[data-advice]').textContent = t(pass
             ? 'Nilaimu sudah mencapai KKM. Lanjutkan ke materi berikutnya.'
-            : 'Nilaimu belum mencapai KKM. Pelajari kembali topik berikut:';
+            : 'Nilaimu belum mencapai KKM. Pelajari kembali topik berikut:');
         const topics = result.querySelector('[data-topics]');
-        topics.replaceChildren(...[...new Set(wrong.map((q) => q.dataset.topic))].map((t) => Object.assign(document.createElement('li'), { textContent: t })));
+        topics.replaceChildren(...[...new Set(wrong.map((q) => q.dataset.topic))].map((topic) => Object.assign(document.createElement('li'), { textContent: t(topic) })));
         result.querySelector('[data-review]').replaceChildren(...qs.map((q) => {
             const picked = q.querySelector('input:checked');
             const right = q.querySelector(`input[value="${q.dataset.answer}"]`);
@@ -97,9 +97,9 @@ if (quiz) {
             li.innerHTML = '<p class="fw-semibold mb-1"></p><p class="mb-1"></p><p class="mb-1"></p><p class="muted small mb-0"></p>';
             const [title, mine, correct, topic] = li.children;
             title.textContent = q.querySelector('legend').textContent;
-            mine.textContent = `Jawabanmu: ${picked.parentElement.textContent.trim()} (${ok ? 'benar' : 'salah'})`;
-            if (ok) correct.remove(); else correct.textContent = `Jawaban benar: ${right.parentElement.textContent.trim()}`;
-            topic.textContent = `Topik: ${q.dataset.topic}`;
+            mine.textContent = `${t('Jawabanmu')}: ${picked.parentElement.textContent.trim()} (${t(ok ? 'benar' : 'salah')})`;
+            if (ok) correct.remove(); else correct.textContent = `${t('Jawaban benar')}: ${right.parentElement.textContent.trim()}`;
+            topic.textContent = `${t('Topik')}: ${t(q.dataset.topic)}`;
             return li;
         }));
         quiz.hidden = true;
@@ -112,3 +112,22 @@ if (quiz) {
         quiz.querySelector('input').focus();
     });
 }
+
+const root = document.documentElement;
+const syncThemeButtons = () => {
+    const light = root.dataset.theme === 'light';
+    document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+        btn.setAttribute('aria-label', t(light ? 'Ganti ke mode gelap' : 'Ganti ke mode terang'));
+        btn.setAttribute('aria-pressed', String(light));
+    });
+};
+document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+        if (next === 'light') root.dataset.theme = 'light'; else delete root.dataset.theme;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        syncThemeButtons();
+        document.dispatchEvent(new Event('themechange'));
+    });
+});
+syncThemeButtons();
