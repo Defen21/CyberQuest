@@ -6,9 +6,11 @@ document.querySelectorAll('form[data-endpoint]').forEach((form) => {
         fields.forEach((el) => el.removeAttribute('aria-invalid'));
         const bad = fields.find((el) => !el.checkValidity());
         if (bad) {
-            fields.filter((el) => !el.checkValidity()).forEach((el) => el.setAttribute('aria-invalid', 'true'));
+            const invalid = fields.filter((el) => !el.checkValidity());
+            invalid.forEach((el) => el.setAttribute('aria-invalid', 'true'));
+            const name = (el) => (form.querySelector(`label[for="${el.id}"]`)?.textContent || el.name).trim();
             help.className = 'form-help is-error';
-            help.textContent = t('Masih ada isian yang kosong atau tidak valid.');
+            help.textContent = `${t('Periksa isian:')} ${invalid.map(name).join(', ')}. ${bad.validationMessage}`;
             bad.focus();
             return;
         }
@@ -131,3 +133,96 @@ document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
     });
 });
 syncThemeButtons();
+
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!calm) {
+    const items = document.querySelectorAll('main .box, main .cells, main > .section, main .table-responsive, main .steps, main .podium, main .question, main .reveal');
+    const seen = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-in');
+            seen.unobserve(entry.target);
+        });
+    }, { threshold: 0.08 });
+    items.forEach((el, i) => {
+        el.classList.add('reveal');
+        el.style.transitionDelay = `${Math.min(i, 6) * 60}ms`;
+        seen.observe(el);
+    });
+
+    document.querySelectorAll('.progress-bar').forEach((bar) => {
+        const w = bar.style.width;
+        bar.style.width = '0%';
+        requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = w; }));
+    });
+
+    document.querySelectorAll('.lvl-ring').forEach((ring) => {
+        const p = Number(getComputedStyle(ring).getPropertyValue('--p')) || 0;
+        const start = performance.now();
+        const step = (now) => {
+            const k = Math.min(1, (now - start) / 1200);
+            ring.style.setProperty('--p', (p * (1 - Math.pow(1 - k, 3))).toFixed(1));
+            if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    });
+
+    document.querySelectorAll('[data-count]').forEach((el) => {
+        const end = Number(el.dataset.count);
+        const start = performance.now();
+        const step = (now) => {
+            const k = Math.min(1, (now - start) / 900);
+            el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))).toLocaleString('id-ID');
+            if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    });
+}
+
+const side = document.getElementById('side');
+if (side) {
+    const openers = document.querySelectorAll('[data-drawer-open]');
+    let backdrop = null;
+    let lastFocus = null;
+    const close = () => {
+        side.classList.remove('is-open');
+        openers.forEach((b) => b.setAttribute('aria-expanded', 'false'));
+        document.body.style.overflow = '';
+        if (backdrop) {
+            const b = backdrop;
+            b.classList.remove('is-open');
+            setTimeout(() => b.remove(), 300);
+            backdrop = null;
+        }
+        lastFocus?.focus();
+    };
+    const open = (btn) => {
+        lastFocus = btn;
+        backdrop = Object.assign(document.createElement('div'), { className: 'drawer-backdrop' });
+        backdrop.addEventListener('click', close);
+        document.body.append(backdrop);
+        requestAnimationFrame(() => backdrop?.classList.add('is-open'));
+        side.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        side.querySelector('a, button')?.focus();
+    };
+    openers.forEach((btn) => btn.addEventListener('click', () => open(btn)));
+    side.querySelectorAll('[data-drawer-close]').forEach((btn) => btn.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && side.classList.contains('is-open')) close(); });
+    matchMedia('(min-width: 80rem)').addEventListener('change', (e) => { if (e.matches && side.classList.contains('is-open')) close(); });
+}
+
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+    tab.addEventListener('click', () => {
+        const list = tab.closest('[role="tablist"]');
+        const pane = document.querySelector(tab.dataset.tab);
+        list.querySelectorAll('[data-tab]').forEach((t) => {
+            const on = t === tab;
+            t.classList.toggle('active', on);
+            t.setAttribute('aria-selected', String(on));
+            document.querySelector(t.dataset.tab)?.classList.toggle('active', on);
+        });
+        pane?.focus({ preventScroll: true });
+    });
+});

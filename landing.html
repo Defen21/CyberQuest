@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js-anim')</script>
+    <title>CyberQuest - Akademi Keamanan Siber Bergamifikasi</title>
+    <meta name="description" content="Belajar keamanan siber dari level Pemula sampai Lanjutan lewat materi, kuis, misi harian, dan kompetisi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght,SHRP@200..600,0..100&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="css/style.css?v=17" rel="stylesheet">
+</head>
+<body class="landing">
+<a class="skip" href="#main">Langsung ke konten</a>
+
+<header class="lnav">
+    <div class="wrap lnav-row">
+        <a class="wordmark" href="landing.html" aria-label="CyberQuest, ke beranda">CyberQuest</a>
+        <nav class="lnav-links" aria-label="Bagian halaman">
+            <a href="#fitur">Fitur</a>
+            <a href="#gamifikasi">Gamifikasi</a>
+            <a href="#tim">Tim</a>
+        </nav>
+        <div class="lnav-end">
+            <span class="nav-tools"><button class="btn btn-sm btn-icon theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Ganti ke mode terang"><svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button><button class="btn btn-sm btn-icon lang-toggle" type="button" data-lang-toggle aria-label="Switch language to English">EN</button></span>
+            <a class="btn btn-sm" href="login.html">Masuk</a>
+        </div>
+    </div>
+</header>
+
+<main id="main">
+    <section class="lhero">
+        <div class="lhero-shield lhero-shield-l" aria-hidden="true"><canvas class="scan" data-scan></canvas></div>
+        <div class="lhero-shield lhero-shield-r" aria-hidden="true"><canvas class="scan" data-scan></canvas></div>
+        <div class="wrap lhero-copy">
+            <p class="pill"><span class="pill-dot"></span>Tugas Besar Pemrograman Web, Kelompok 02</p>
+            <h1>Akademi keamanan siber yang terasa seperti game</h1>
+            <p class="lead">Belajar dari level Pemula sampai Lanjutan lewat materi, kuis, misi harian, dan kompetisi.</p>
+            <div class="actions justify-center">
+                <a class="btn btn-ink btn-lg" href="register.html">Buat akun gratis</a>
+                <a class="btn btn-lg" href="login.html">Masuk</a>
+            </div>
+        </div>
+
+        <div class="wrap">
+            <figure class="preview reveal">
+                <img src="img/dashboard-preview.webp" width="1400" height="875" alt="Tampilan dashboard peserta CyberQuest: XP, level, kalender streak, dan progres misi.">
+            </figure>
+        </div>
+    </section>
+
+    <section class="wrap lsection" id="fitur" aria-labelledby="fitur-title">
+        <div class="lsection-head">
+            <h2 id="fitur-title">Latihan keamanan siber interaktif, dari dasar sampai mahir</h2>
+            <a class="btn" href="index.html">Lihat Learning Path</a>
+        </div>
+        <div class="features">
+            <article class="feature reveal">
+                <span class="feature-icon" aria-hidden="true"><svg class="bi" aria-hidden="true"><use href="img/icons.svg#signpost-split"/></svg></span>
+                <h3>Learning Path</h3>
+                <p>Tiga level berurutan. Modul berikutnya terbuka setelah kamu lulus kuis.</p>
+                <ul class="feature-demo plain">
+                    <li class="lvl-pemula"><span class="swatch" aria-hidden="true"></span>Pemula<span class="tag tag-solid ml-auto">Aktif</span></li>
+                    <li class="lvl-menengah"><span class="swatch" aria-hidden="true"></span>Menengah<span class="tag tag-quiet ml-auto">Terkunci</span></li>
+                    <li class="lvl-lanjutan"><span class="swatch" aria-hidden="true"></span>Lanjutan<span class="tag tag-quiet ml-auto">Terkunci</span></li>
+                </ul>
+            </article>
+            <article class="feature reveal">
+                <span class="feature-icon" aria-hidden="true"><svg class="bi" aria-hidden="true"><use href="img/icons.svg#patch-question"/></svg></span>
+                <h3>Kuis dan rekomendasi</h3>
+                <p>Jatah percobaan terbatas. Jawaban yang salah langsung diarahkan ke materi yang perlu diulang.</p>
+                <div class="feature-demo">
+                    <div class="flex items-center gap-4">
+                        <div class="ring-wrap ring-sm"><div class="lvl-ring" style="--p: 67"></div><div class="ring-label"><span class="num">67</span></div></div>
+                        <div><p class="mb-1 small">Pelajari ulang:</p><p class="mb-0"><strong>Prinsip CIA Triad</strong></p></div>
+                    </div>
+                </div>
+            </article>
+            <article class="feature reveal">
+                <span class="feature-icon" aria-hidden="true"><svg class="bi" aria-hidden="true"><use href="img/icons.svg#check2-square"/></svg></span>
+                <h3>Misi dan tantangan</h3>
+                <p>Misi harian menjaga streak. Tantangan mingguan memberi XP dan badge tambahan.</p>
+                <div class="feature-demo">
+                    <div class="meter-row mb-2"><span class="small">Misi harian</span><span class="num small">3/5</span><div class="progress"><div class="progress-bar" style="width: 60%"></div></div></div>
+                    <div class="meter-row mb-0"><span class="small">Tantangan mingguan</span><span class="num small">4/6</span><div class="progress"><div class="progress-bar" style="width: 70%"></div></div></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="wrap lsection" aria-labelledby="isi-title">
+        <h2 id="isi-title" class="sr-only">Isi CyberQuest saat ini</h2>
+        <div class="bigstats reveal">
+            <div><p class="bignum">3</p><p class="label">Level belajar</p></div>
+            <div><p class="bignum">9</p><p class="label">Materi</p></div>
+            <div><p class="bignum">10</p><p class="label">Tingkat XP</p></div>
+            <div><p class="bignum">8</p><p class="label">Badge</p></div>
+        </div>
+    </section>
+
+    <section class="wrap lsection" id="gamifikasi" aria-labelledby="gami-title">
+        <div class="gami reveal">
+            <div class="gami-copy">
+                <h2 id="gami-title">XP, level, badge, dan peringkat dalam satu tempat</h2>
+                <p class="lead">Setiap materi, kuis, dan misi memberi XP. Naik dari Newbie sampai Cyber Guardian, kumpulkan badge, lalu bandingkan posisimu di leaderboard.</p>
+                <ul class="checks plain">
+                    <li><svg class="bi" aria-hidden="true"><use href="img/icons.svg#check2-circle"/></svg>10 tingkat level, dari Newbie sampai Cyber Guardian</li>
+                    <li><svg class="bi" aria-hidden="true"><use href="img/icons.svg#check2-circle"/></svg>8 badge dengan kelangkaan Umum sampai Legendaris</li>
+                    <li><svg class="bi" aria-hidden="true"><use href="img/icons.svg#check2-circle"/></svg>Leaderboard mingguan dan kompetisi antarpeserta</li>
+                </ul>
+                <div class="actions"><a class="btn btn-ink" href="leaderboard.html">Lihat leaderboard</a><a class="btn" href="badge.html">Lihat badge</a></div>
+            </div>
+            <div class="gami-art" aria-hidden="true"><canvas class="scan" data-scan></canvas></div>
+        </div>
+    </section>
+
+    <section class="wrap lsection" id="tim" aria-labelledby="tim-title">
+        <div class="lsection-head">
+            <h2 id="tim-title">Dibangun oleh Kelompok 02</h2>
+        </div>
+        <ul class="team plain">
+            <li class="reveal"><span class="avatar" aria-hidden="true">RT</span><div><strong>Ramadhan Tangguh Defender</strong><p>Login, registrasi, dan profil</p></div></li>
+            <li class="reveal"><span class="avatar" aria-hidden="true">MP</span><div><strong>Meysha Primiandita</strong><p>Learning path dan materi</p></div></li>
+            <li class="reveal"><span class="avatar" aria-hidden="true">AN</span><div><strong>Avicena Naufal Lathif</strong><p>Kuis dan rekomendasi materi</p></div></li>
+            <li class="reveal"><span class="avatar" aria-hidden="true">FR</span><div><strong>Fathimah Radhiyya</strong><p>Sistem XP, level, dan badge</p></div></li>
+            <li class="reveal"><span class="avatar" aria-hidden="true">JN</span><div><strong>Jihan Nabila Mubarokah</strong><p>Misi harian dan tantangan mingguan</p></div></li>
+            <li class="reveal"><span class="avatar" aria-hidden="true">ZS</span><div><strong>Zaidan Salam Rojab</strong><p>Leaderboard, kompetisi, dan dashboard</p></div></li>
+        </ul>
+    </section>
+
+    <section class="wrap lsection">
+        <div class="lcta reveal">
+            <h2>Mulai dari level Pemula hari ini</h2>
+            <p class="lead">Tidak perlu pengalaman sebelumnya. Buat akun, lalu buka materi pertama.</p>
+            <div class="actions justify-center">
+                <a class="btn btn-ink btn-lg" href="register.html">Buat akun gratis</a>
+                <a class="btn btn-lg" href="index.html">Lihat Learning Path</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="foot">
+    <div class="wrap">
+        <span>CyberQuest, Tugas Besar Pemrograman Web Kelompok 02.</span>
+        <span class="flex gap-4"><a href="login.html">Masuk</a><a href="register.html">Daftar</a><a href="admin.html">Area staf</a></span>
+    </div>
+</footer>
+
+<script src="js/i18n.js?v=17" defer></script>
+<script src="js/app.js?v=17" defer></script>
+<script src="js/scan.js?v=17" defer></script>
+</body>
+</html>
